@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   body{
@@ -8,6 +8,9 @@ const GlobalStyles = createGlobalStyle`
   }
   *{
     box-sizing: border-box;
+  }
+  p{
+    margin:0;
   }
 `;
 
