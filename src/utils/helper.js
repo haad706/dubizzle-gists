@@ -4,7 +4,7 @@ import { DATE_FORMAT, DEBOUNCE_TIMEOUT } from "utils/constants";
 /**
  * Responsible for debounce
  */
-const debounceFunction = () => {
+export const debounceFunction = () => {
   let timeoutInstance = null;
   return (callback) => {
     /**

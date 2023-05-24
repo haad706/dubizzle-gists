@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingGists should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gTRrQi jdwaWp"
+  >
+    <div
+      class="sc-bgqQcB gXlruc"
+    >
+      Loading...
+    </div>
+    <div
+      class="sc-bgqQcB gXlruc"
+    >
+      Loading...
+    </div>
+  </div>
+</DocumentFragment>
+`;

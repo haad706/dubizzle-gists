@@ -52,8 +52,8 @@ export const GistList = () => {
    */
   return (
     <GistListWrapper>
-      {gists.map((gist) => (
-        <Gist {...gist} />
+      {gists.map((gist, index) => (
+        <Gist {...gist} files={Object.values(gist.files)} key={index} />
       ))}
     </GistListWrapper>
   );

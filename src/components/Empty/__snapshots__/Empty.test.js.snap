@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Empty should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bgqQcB jpmheq"
+  >
+    <img
+      alt="no-gists-found"
+      src="no-data.svg"
+    />
+    <h3>
+      No data found
+    </h3>
+  </div>
+</DocumentFragment>
+`;

@@ -11,10 +11,14 @@ export const Files = ({ files }) => {
 
   return (
     <FilesWrapper>
-      {files.map((file) => {
-        const { filename, raw_url: rawUrl } = file;
-        return <IconText iconName="file" link={rawUrl} text={filename} />;
-      })}
+      {files.map(({ filename, raw_url: rawUrl }) => (
+        <IconText
+          iconName="file"
+          link={rawUrl}
+          text={filename}
+          key={filename}
+        />
+      ))}
     </FilesWrapper>
   );
 };

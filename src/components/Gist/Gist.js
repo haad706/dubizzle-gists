@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Date, Files, IconText, UserTitle } from "components";
 
 export const Gist = ({
-  files = {},
+  files = [],
   owner = {},
   forks_url: forksUrl,
   comments,
@@ -14,7 +14,7 @@ export const Gist = ({
 }) => {
   const { login, avatar_url: avatarImageUrl } = owner;
 
-  const numberOfFiles = Object.keys(files).length;
+  const numberOfFiles = files.length;
 
   return (
     <CardWrapper>
@@ -36,7 +36,7 @@ export const Gist = ({
         <Date label="Updated at" time={updatedAt} />
       </DateWrapper>
       {description && <h4>{description}</h4>}
-      <Files files={Object.values(files)} />
+      <Files files={files} />
     </CardWrapper>
   );
 };
@@ -87,12 +87,12 @@ Gist.propTypes = {
   ),
   owner: PropTypes.shape({
     login: PropTypes.string.isRequired,
-    avatarImageUrl: PropTypes.string.isRequired,
+    avatar_url: PropTypes.string.isRequired,
   }),
-  forksUrl: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  updatedAt: PropTypes.string.isRequired,
-  commentsUrl: PropTypes.string.isRequired,
+  forks_url: PropTypes.string.isRequired,
+  created_at: PropTypes.string.isRequired,
+  updated_at: PropTypes.string.isRequired,
+  comments_url: PropTypes.string.isRequired,
   comments: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
 };

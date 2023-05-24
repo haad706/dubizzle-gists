@@ -9,8 +9,8 @@ export const LoadingGists = ({ count }) => {
     <Wrapper>
       {Array(count)
         .fill("")
-        .map((_) => (
-          <Skeleton>Loading...</Skeleton>
+        .map((_, index) => (
+          <Skeleton key={index}>Loading...</Skeleton>
         ))}
     </Wrapper>
   );

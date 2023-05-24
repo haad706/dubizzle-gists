@@ -27,8 +27,8 @@ const IconWrapper = styled.img.attrs((props) => ({
 `;
 
 UserTitle.propTypes = {
-  label: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
 };
 
 export default UserTitle;
