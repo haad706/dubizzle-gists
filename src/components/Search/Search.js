@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Octicon from "react-octicon";
 import styled from "styled-components";
-import { getGistForUser } from "services/gistService";
+import { getGistForUser, getPublicGists } from "services/gistService";
 import {
   setGists,
   startLoadingGists,
@@ -23,9 +23,29 @@ export const Search = () => {
   };
 
   /**
+   * get all gists
+   */
+  const getGists = async () => {
+    dispatch(startLoadingGists());
+    try {
+      const { data } = await getPublicGists();
+      dispatch(setGists(data));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch(stopLoadingGists());
+    }
+  };
+
+  /**
    * callback for search
    */
   const searchUser = async (value) => {
+    if (!value) {
+      dispatch(setGists([]));
+      getGists();
+      return;
+    }
     dispatch(startLoadingGists());
     try {
       const { data } = await getGistForUser(value);
